@@ -11,6 +11,7 @@
         "prettier": "prettier --write ."
     },
     "dependencies": {
+        "normalize.css": "^8.0.1",
         "react": "^19.2.8",
         "react-dom": "^19.2.8"
     },
@@ -19,6 +20,7 @@
         "@types/react": "^19.2.18",
         "@types/react-dom": "^19.2.7",
         "@vitejs/plugin-react": "^6.1.1",
+        "less": "^4.9.1",
         "oxlint": "^1.81.0",
         "oxlint-tsgolint": "^7.0.2003",
         "prettier": "^3.9.9",

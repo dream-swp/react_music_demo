@@ -20,4 +20,6 @@
 npm install -D @types/node vite-tsconfig-paths
 npm install prettier -D
 npm install -D oxlint-tsgolint
+npm install normalize.css
+npm install -D less
 ```
