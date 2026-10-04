@@ -4,7 +4,7 @@
 
 ## prettier 插件配置
 
-- 安装  prettier
+- 安装 prettier
 - 项目中新增 .prettierrc 格式化规则
 - 项目中新增 .prettierignore 忽略规则, 处理不需要格式化的文件
 
@@ -42,7 +42,7 @@ npm install prettier -D
 
 ```zsh
 # 执行 prettier, 格式话所有的文件
-npm run prettier 
+npm run prettier
 ```
 
 ---
@@ -58,16 +58,53 @@ npm install -D oxlint-tsgolint
 ### 配置 .oxlintrc.json 文件
 
 ```json
-// other....
-"rules": {
-    // other....
-    "typescript/no-floating-promises": "error",
-    "typescript/no-misused-promises": "error"
-},
-"options": {
-    "typeAware": true,
-    "typeCheck": true
-},
+{
+    "$schema": "./node_modules/oxlint/configuration_schema.json",
+    "plugins": ["typescript", "react", "import", "jsdoc", "node"],
+
+    // 1. 定义代码运行环境，用于识别全局变量
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2021": true
+    },
+
+    // 2. 声明项目自定义的全局变量
+    "globals": {
+        "myCustomGlobal": "readonly",
+        "analytics": "writable"
+    },
+
+    // 3. 配置需要忽略检查的文件
+    "ignorePatterns": [
+        "dist/**",
+        "coverage/**",
+        "*.min.js",
+        "!dist/keep-this-file.js" // 使用 ! 取消忽略特定文件
+    ],
+
+    "rules": {
+        "react/rules-of-hooks": "error",
+        "react/only-export-components": ["warn", { "allowConstantExport": true }],
+        "typescript/no-floating-promises": "error",
+        "typescript/no-misused-promises": "error"
+    },
+
+    // 4. 为特定文件（如测试文件）覆盖规则
+    "overrides": [
+        {
+            "files": ["*.test.ts", "*.spec.ts", "**/__tests__/**/*"],
+            "rules": {
+                "typescript/no-explicit-any": "off" // 测试文件中允许使用 any
+            }
+        }
+    ],
+
+    "options": {
+        "typeAware": true,
+        "typeCheck": true
+    }
+}
 ```
 
 ---
