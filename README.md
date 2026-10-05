@@ -18,8 +18,17 @@
 
 ```zsh
 npm install -D @types/node vite-tsconfig-paths
-npm install prettier -D
 npm install -D oxlint-tsgolint
+
+# 代码格式化
+npm install prettier -D~~
+
+# 重制 CSS 状态
 npm install normalize.css
+
+# 支持 less 
 npm install -D less
+
+# 页面跳转, 路由
+npm install react-router
 ```

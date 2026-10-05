@@ -8,8 +8,8 @@
 
 ### vite.config.ts 文件配置
 
-- 安装 @types/node vite-tsconfig-paths 插件
-- vite.config.ts 配置文件:
+- 安装 `@types/node vite-tsconfig-paths` 插件
+- `vite.config.ts` 配置文件:
 
 ```ts
     // ....
@@ -38,21 +38,43 @@
 
 ### CSS 重制
 
-- 使用 .less 编写cass 和重制样式
-- 安装 less 插件
-- 安装 重制 normalize.css 样式
-- 创建 assets/css/reset.less 重制自定义重制文件
-- 在 主入口引入 重制 css 样式
+- 使用 `.less` 编写 `cass` 和重制样式
+- 安装 `less` 插件
+- 安装 重制 `normalize.css` 样式
+- 创建 `assets/css/reset.less` 重制自定义重制文件
+- 在 主入口引入 重制 `css` 样式
+- 详见参考 : `src/assets/css` 目录
 
 ```zsh
 npm install -D less
 npm install normalize.css
 ```
 
-* reset.less:
-  
+- reset.less:
+
 ```less
-body, html, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, header, menu, section, p, input, td, th, ins {
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+header,
+menu,
+section,
+p,
+input,
+td,
+th,
+ins {
     padding: 0;
     margin: 0;
 }
@@ -76,14 +98,22 @@ button {
 }
 ```
 
-* main.tsx 引入文件
-  
+- main.tsx 引入文件
+
 ```tsx
 // ....
 import 'normalize.css'
 import '@/assets/css/index.less'
-// ... 
-
+// ...
 ```
 
 ---
+
+### react-router 路由设置
+
+- 安装 `react-router` 插件
+- 详细配置轻参考: `src/router` 目录
+
+```zsh
+npm install react-router
+```

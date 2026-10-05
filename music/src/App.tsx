@@ -1,10 +1,10 @@
 import { memo } from 'react'
+import { useRoutes } from 'react-router'
+
+import routes from '@/router'
+// import Home from './views/home'
 
 const App = memo(() => {
-    return (
-        <div>
-            <h2>App</h2>
-        </div>
-    )
+    return <div className="App">{useRoutes(routes)}</div>
 })
 export default App
