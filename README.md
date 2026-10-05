@@ -34,4 +34,7 @@ npm install react-router
 
 # redux 状态管理
 npm install @reduxjs/toolkit react-redux
+
+# axios 网络请求
+npm install axios
 ```

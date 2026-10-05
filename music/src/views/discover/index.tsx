@@ -5,7 +5,6 @@ import { Link, Outlet } from 'react-router'
 interface IProps {
     children?: ReactNode
 }
-
 const Discover = memo<IProps>(() => {
     return (
         <div>
