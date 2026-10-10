@@ -8,13 +8,17 @@ import '@/assets/css/index.less'
 
 import App from '@/App'
 import store from '@/store'
+import { ThemeProvider } from '@emotion/react'
+import theme from '@/assets/theme'
 
 createRoot(document.getElementById('root')!).render(
-    <StrictMode>
+    // <StrictMode>
         <Provider store={store}>
-            <HashRouter>
-                <App />
-            </HashRouter>
+            <ThemeProvider theme={theme}>
+                <HashRouter>
+                    <App />
+                </HashRouter>
+            </ThemeProvider>
         </Provider>
-    </StrictMode>
+    /* </StrictMode> */
 )

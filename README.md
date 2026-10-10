@@ -37,4 +37,14 @@ npm install @reduxjs/toolkit react-redux
 
 # axios 网络请求
 npm install axios
+
+# 样式框架 CSS IN JS emotion or styled-components
+npm install @emotion/react @emotion/styled
+npm install styled-components
+
+# antd, 常用 UI 
+npm install antd --save
+
+# antd, d常用 UI icon
+npm install @ant-design/icons@6.x --save
 ```

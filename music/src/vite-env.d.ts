@@ -8,3 +8,8 @@ interface ImportMetaEnv {
 interface ImportMeta {
     readonly env: ImportMetaEnv
 }
+
+import type { AppTheme } from '@/assets/theme'
+declare module '@emotion/react' {
+    export interface Theme extends AppTheme {}
+}
