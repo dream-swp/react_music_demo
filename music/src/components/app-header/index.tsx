@@ -24,7 +24,6 @@ const AppHeader = memo<IProps>(() => {
 
     function displayItem(item: HeaderItem) {
         if (item.type === 'path') {
-            console.log(item.link)
             return (
                 <NavLink to={item.link ?? '/discover'}>
                     {item.title}

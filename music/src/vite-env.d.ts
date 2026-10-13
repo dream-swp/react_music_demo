@@ -13,3 +13,8 @@ import type { AppTheme } from '@/assets/theme'
 declare module '@emotion/react' {
     export interface Theme extends AppTheme {}
 }
+
+import 'styled-components'
+declare module 'styled-components' {
+    export interface DefaultTheme extends AppTheme {}
+}

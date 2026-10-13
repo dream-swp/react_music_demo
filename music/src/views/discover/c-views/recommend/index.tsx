@@ -1,15 +1,27 @@
-import { memo } from 'react'
+import { memo, useEffect } from 'react'
 import type { ReactNode } from 'react'
+import { feachBannersAction } from './store'
+import { useAppDispatch } from '@/store'
+
+import TopBanner from './c-cpns/top-banner'
+import { RecommendWrapper } from './style'
 
 interface IProps {
     children?: ReactNode
 }
 
 const Recommend = memo<IProps>(() => {
+    const dispatch = useAppDispatch()
+
+    useEffect(() => {
+        dispatch(feachBannersAction())
+    }, [])
+
     return (
-        <div>
+        <RecommendWrapper>
+            <TopBanner />
             <span>Recommend</span>
-        </div>
+        </RecommendWrapper>
     )
 })
 

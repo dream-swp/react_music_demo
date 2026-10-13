@@ -3,10 +3,12 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 import type { TypedUseSelectorHook } from 'react-redux'
 
 import discoverSlice from './modules/discover'
+import recommendSlice from '@/views/discover/c-views/recommend/store'
 
 const store = configureStore({
     reducer: {
-        discover: discoverSlice
+        discover: discoverSlice,
+        recommen: recommendSlice
     }
 })
 

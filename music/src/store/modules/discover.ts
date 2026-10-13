@@ -2,9 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const discoverSlice = createSlice({
     name: 'discover',
-    initialState: {
-        
-    },
+    initialState: {},
     reducers: {}
 })
 

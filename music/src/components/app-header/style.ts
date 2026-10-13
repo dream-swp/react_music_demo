@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 import spriteImg from '@/assets/img/sprite_01.png'
 
@@ -82,7 +82,6 @@ export const HaderLeftWrapper = styled.div`
     }
 `
 export const HaderRightWrapper = styled.div`
-
     display: flex;
     align-items: center;
     color: #787878;
@@ -97,7 +96,6 @@ export const HaderRightWrapper = styled.div`
                 font-size: 12px;
             }
         }
-        
     }
 
     .center {
@@ -109,7 +107,7 @@ export const HaderRightWrapper = styled.div`
         border: 1px solid #4f4f4f;
         border-radius: 16px;
         /* box-sizing: border-box; */
-    
+
         color: #ccc;
         &:hover {
             color: #fff;
@@ -117,5 +115,4 @@ export const HaderRightWrapper = styled.div`
             border: 1px solid #ccc;
         }
     }
-    
 `
