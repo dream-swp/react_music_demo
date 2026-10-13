@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import downloadImg from '@/assets/img/download.png'
-import controImage from '@/assets/img/banner_sprite.png'
+import controlImage from '@/assets/img/banner_sprite.png'
 
 interface BannerProps {
     $bgImage: string
@@ -45,16 +45,21 @@ export const BannerControlWrapper = styled.div`
     position: absolute;
     left: 0;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
+    bottom: 0; 
+    pointer-events: none; 
 
     .btn {
         position: absolute;
+        top: 50%; 
+        transform: translateY(-50%);
+        pointer-events: auto; 
         width: 37px;
         height: 63px;
-        background-image: url(${controImage});
+        background-image: url(${controlImage});
         cursor: pointer;
         background-color: rgba(0, 0, 0, 0);
+
         &:hover {
             background-color: rgba(0, 0, 0, 0.1);
         }
