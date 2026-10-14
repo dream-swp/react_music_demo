@@ -34,7 +34,7 @@ const TopBanner = memo<IProps>(() => {
             bannerRef?.current?.prev()
         }
     }, [])
-    
+
     const handleAfterChange = useCallback(
         (index: number) => {
             setCurrentIndex(index)

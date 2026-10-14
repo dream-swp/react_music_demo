@@ -19,7 +19,7 @@ const Recommend = memo<IProps>(() => {
 
     return (
         <RecommendWrapper>
-            <TopBanner  />
+            <TopBanner />
             <span>Recommend</span>
         </RecommendWrapper>
     )
