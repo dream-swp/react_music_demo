@@ -7,7 +7,6 @@ import { shallowEqualApp, useAppSelector } from '@/store'
 import classNames from 'classnames'
 
 interface IProps {
-    bgImage: string
     children?: ReactNode
 }
 
@@ -20,6 +19,14 @@ const TopBanner = memo<IProps>(() => {
     )
 
     const bannerRef = useRef<ComponentRef<typeof Carousel>>(null)
+    const [currentIndex, setCurrentIndex] = useState(0)
+    const [bgImage, setBgImage] = useState<string>('')
+
+    useEffect(() => {
+        if (!banners.length) return
+        setBgImage(banners[currentIndex].imageUrl + '?imageView&blur=40x20')
+    }, [banners])
+
     const controlClickHandle = useCallback((isNext: boolean) => {
         if (isNext) {
             bannerRef?.current?.next()
@@ -27,22 +34,23 @@ const TopBanner = memo<IProps>(() => {
             bannerRef?.current?.prev()
         }
     }, [])
-
-    const [currentIndex, setCurrentIndex] = useState(0)
-    const [bgImage, setBgImage] = useState<string>('')
-
+    
     const handleAfterChange = useCallback(
         (index: number) => {
             setCurrentIndex(index)
             setBgImage(banners[index].imageUrl + '?imageView&blur=40x20')
         },
-        [bgImage]
+        [bgImage, currentIndex]
     )
 
-    useEffect(() => {
-        if (!banners.length) return
-        setBgImage(banners[currentIndex].imageUrl + '?imageView&blur=40x20')
-    }, [banners])
+    const handleGotoChange = useCallback(
+        (index: number) => {
+            setCurrentIndex(index)
+            setBgImage(banners[index].imageUrl + '?imageView&blur=40x20')
+            bannerRef?.current?.goTo(index)
+        },
+        [bgImage, currentIndex]
+    )
 
     return (
         <BannerWrapper $bgImage={bgImage ?? ''}>
@@ -71,7 +79,7 @@ const TopBanner = memo<IProps>(() => {
                     <ul className="dots">
                         {banners.map((item, index) => {
                             return (
-                                <li key={item.targetId}>
+                                <li key={item.targetId} onClick={() => handleGotoChange(index)}>
                                     <span
                                         className={classNames('item', {
                                             active: index === currentIndex
