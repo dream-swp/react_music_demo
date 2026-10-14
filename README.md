@@ -47,4 +47,8 @@ npm install antd --save
 
 # antd, d常用 UI icon
 npm install @ant-design/icons@6.x --save
+
+# classnames
+npm install classnames
+
 ```

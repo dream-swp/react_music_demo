@@ -4,6 +4,7 @@ import { Carousel } from 'antd'
 
 import { BannerWrapper, BannerLeftWrapper, BannerRightWrapper, BannerControlWrapper } from './style'
 import { shallowEqualApp, useAppSelector } from '@/store'
+import classNames from 'classnames'
 
 interface IProps {
     bgImage: string
@@ -51,6 +52,7 @@ const TopBanner = memo<IProps>(() => {
                         autoplay
                         ref={bannerRef}
                         effect="fade"
+                        dots={false}
                         afterChange={(index) => handleAfterChange(index)}
                     >
                         {banners.map((item) => {
@@ -66,6 +68,19 @@ const TopBanner = memo<IProps>(() => {
                             )
                         })}
                     </Carousel>
+                    <ul className="dots">
+                        {banners.map((item, index) => {
+                            return (
+                                <li key={item.targetId}>
+                                    <span
+                                        className={classNames('item', {
+                                            active: index === currentIndex
+                                        })}
+                                    ></span>
+                                </li>
+                            )
+                        })}
+                    </ul>
                 </BannerLeftWrapper>
                 <BannerRightWrapper></BannerRightWrapper>
                 <BannerControlWrapper>

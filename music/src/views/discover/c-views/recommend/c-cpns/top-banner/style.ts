@@ -30,6 +30,33 @@ export const BannerLeftWrapper = styled.div`
             width: 100%;
         }
     }
+
+    .dots {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+
+        > li {
+            margin: 0 2px;
+            .item {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                color: red;
+                background: url(${controlImage}) 3px -343px;
+                cursor: pointer;
+
+                &:hover,
+                &.active {
+                    background-position: -16px -343px;
+                }
+            }
+        }
+    }
 `
 
 export const BannerRightWrapper = styled.a.attrs({
@@ -46,14 +73,14 @@ export const BannerControlWrapper = styled.div`
     left: 0;
     right: 0;
     top: 0;
-    bottom: 0; 
-    pointer-events: none; 
+    bottom: 0;
+    pointer-events: none;
 
     .btn {
         position: absolute;
-        top: 50%; 
+        top: 50%;
         transform: translateY(-50%);
-        pointer-events: auto; 
+        pointer-events: auto;
         width: 37px;
         height: 63px;
         background-image: url(${controlImage});
