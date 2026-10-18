@@ -13,6 +13,8 @@ export const RecommendSection = styled.div`
 `
 
 export const RecommendLeft = styled.div`
+    box-sizing: border-box;
+    min-width: 0;
     padding: 20px;
     width: 729px;
 `

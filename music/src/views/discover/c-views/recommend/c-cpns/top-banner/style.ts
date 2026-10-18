@@ -9,7 +9,7 @@ interface BannerProps {
 
 export const BannerWrapper = styled.div<BannerProps>`
     background: url(${(props) => props.$bgImage}) center center / 6000px;
-    .banner {
+    .top-banner {
         height: 270px;
         display: flex;
         position: relative;

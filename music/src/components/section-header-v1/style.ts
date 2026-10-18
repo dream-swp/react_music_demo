@@ -10,7 +10,7 @@ export const HeaderV1Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    .left {
+    .section-left {
         display: flex;
         align-items: center;
         .title {
@@ -38,7 +38,7 @@ export const HeaderV1Wrapper = styled.div`
         }
     }
 
-    .right {
+    .section-right {
         display: flex;
         align-items: center;
         .icon {

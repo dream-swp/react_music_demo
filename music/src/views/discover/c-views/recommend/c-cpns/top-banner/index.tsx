@@ -54,7 +54,7 @@ const TopBanner = memo<IProps>(() => {
 
     return (
         <BannerWrapper $bgImage={bgImage ?? ''}>
-            <div className="banner wrap-v2">
+            <div className="top-banner wrap-v2">
                 <BannerLeftWrapper>
                     <Carousel
                         autoplay

@@ -20,7 +20,11 @@ const HotRecommend = memo<IProps>(() => {
 
     return (
         <RecommendWrapper>
-            <SectionHeaderV1 title="热门推荐" keywords={['华语', '流行', '摇滚', '民谣', '电子']} />
+            <SectionHeaderV1
+                title="热门推荐"
+                keywords={['华语', '流行', '摇滚', '民谣', '电子']}
+                morePath="/discover/songs"
+            />
             <div className="recommend-list">
                 {hotRecommend.map((item) => {
                     return <SectionItemV1 key={item.id} item={item} />
