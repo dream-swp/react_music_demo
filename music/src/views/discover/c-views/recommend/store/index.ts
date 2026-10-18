@@ -36,6 +36,6 @@ const recommendSlice = createSlice({
     }
 })
 
-export const { changeBannersAction, changeHotRecommendAction} = recommendSlice.actions
+export const { changeBannersAction, changeHotRecommendAction } = recommendSlice.actions
 
 export default recommendSlice.reducer

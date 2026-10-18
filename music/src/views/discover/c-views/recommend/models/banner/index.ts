@@ -13,5 +13,3 @@ export interface Banner {
     s_ctrp: string
     url: string
 }
-
-

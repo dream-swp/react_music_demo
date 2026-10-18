@@ -4,6 +4,7 @@ import RecommendWrapper from './style'
 
 import SectionHeaderV1 from '@/components/section-header-v1'
 import { shallowEqualApp, useAppSelector } from '@/store'
+import SongMenuItem from '@/components/song-menu-itme'
 
 interface IProps {
     children?: ReactNode
@@ -23,13 +24,9 @@ const HotRecommend = memo<IProps>(() => {
                 title="热门推荐"
                 keywords={['华语', '流行', '摇滚', '民谣', '电子']}
             ></SectionHeaderV1>
-            <div className="hot-recommend">
+            <div className="recommend-list">
                 {hotRecommend.map((item) => {
-                    return (
-                        <div className="item" key={item.id}>
-                            {item.name}
-                        </div>
-                    )
+                    return <SongMenuItem key={item.id} item={item} />
                 })}
             </div>
         </RecommendWrapper>
