@@ -4,7 +4,8 @@ import { feachBannersAction } from './store'
 import { useAppDispatch } from '@/store'
 
 import TopBanner from './c-cpns/top-banner'
-import { RecommendWrapper } from './style'
+import { RecommendLeft, RecommendRight, RecommendSection, RecommendWrapper } from './style'
+import HotRecommend from './c-cpns/hot-recommend'
 
 interface IProps {
     children?: ReactNode
@@ -20,7 +21,13 @@ const Recommend = memo<IProps>(() => {
     return (
         <RecommendWrapper>
             <TopBanner />
-            <span>Recommend</span>
+            <RecommendSection className="content">
+                <RecommendLeft className="left">
+                    <HotRecommend></HotRecommend>
+                </RecommendLeft>
+                
+                <RecommendRight className="right">right</RecommendRight>
+            </RecommendSection>
         </RecommendWrapper>
     )
 })
