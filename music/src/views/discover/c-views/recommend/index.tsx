@@ -25,7 +25,6 @@ const Recommend = memo<IProps>(() => {
                 <RecommendLeft className="left">
                     <HotRecommend></HotRecommend>
                 </RecommendLeft>
-                
                 <RecommendRight className="right">right</RecommendRight>
             </RecommendSection>
         </RecommendWrapper>
