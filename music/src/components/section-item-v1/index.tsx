@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { ReactNode } from 'react'
-import MenuItemWrapper from './style'
+import { ItemV1Wrapper } from './style'
 import type { HotRecommend } from '@/views/discover/c-views/recommend/models/recommend'
 
 interface IProps {
@@ -8,10 +8,10 @@ interface IProps {
     item?: HotRecommend
 }
 
-const SongMenuItem = memo<IProps>((props) => {
+const SectionItemV1 = memo<IProps>((props) => {
     const { item } = props
     return (
-        <MenuItemWrapper>
+        <ItemV1Wrapper>
             <div className="top">
                 <img src={item?.picUrl} alt="" />
                 <div className="cover sprite_cover">
@@ -25,8 +25,8 @@ const SongMenuItem = memo<IProps>((props) => {
                 </div>
             </div>
             <div className="bottom">{item?.name}</div>
-        </MenuItemWrapper>
+        </ItemV1Wrapper>
     )
 })
 
-export default SongMenuItem
+export default SectionItemV1
