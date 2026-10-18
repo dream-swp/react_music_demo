@@ -79,7 +79,7 @@ const TopBanner = memo<IProps>(() => {
                     <ul className="dots">
                         {banners.map((item, index) => {
                             return (
-                                <li key={item.targetId} onClick={() => handleGotoChange(index)}>
+                                <li key={item.imageUrl} onClick={() => handleGotoChange(index)}>
                                     <span
                                         className={classNames('item', {
                                             active: index === currentIndex

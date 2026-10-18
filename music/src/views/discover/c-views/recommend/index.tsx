@@ -1,6 +1,6 @@
 import { memo, useEffect } from 'react'
 import type { ReactNode } from 'react'
-import { feachBannersAction } from './store'
+import { feachBannersAction, feachHotRecommend } from './store'
 import { useAppDispatch } from '@/store'
 
 import TopBanner from './c-cpns/top-banner'
@@ -16,6 +16,7 @@ const Recommend = memo<IProps>(() => {
 
     useEffect(() => {
         dispatch(feachBannersAction())
+        dispatch(feachHotRecommend())
     }, [])
 
     return (

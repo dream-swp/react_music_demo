@@ -3,16 +3,19 @@ import type { ReactNode } from 'react'
 import HeaderV1Wrapper from './style'
 
 interface IProps {
+    title?: string
+    keywords?: string[]
     children?: ReactNode
 }
 
-const SectionHeaderV1 = memo<IProps>(() => {
+const SectionHeaderV1 = memo<IProps>((props) => {
+    const { title = '', keywords = [] } = props
     return (
         <HeaderV1Wrapper className="sprite_02">
             <div className="left">
-                <a className="title">热门推荐</a>
+                <a className="title">{title}</a>
                 <div className="keyword">
-                    {['华语', '流行', '摇滚', '民谣', '电子'].map((item, index) => {
+                    {keywords.map((item) => {
                         return (
                             <div className="item" key={item}>
                                 <span className="text">{item}</span>
