@@ -1,15 +1,20 @@
 import { memo } from 'react'
 import type { ReactNode } from 'react'
 import { ItemV1Wrapper } from './style'
-import type { HotRecommend } from '@/views/discover/c-views/recommend/models/recommend'
 import { formatCount, getImageUrl } from '@/utils/format'
 
-interface IProps {
-    children?: ReactNode
-    item?: HotRecommend
+interface ItemV1 {
+    name: string
+    picUrl: string
+    playCount: number
 }
 
-const SectionItemV1 = memo<IProps>((props) => {
+interface IProps<T extends ItemV1> {
+    children?: ReactNode
+    item?: T
+}
+
+const SectionItemV1 = memo<IProps<ItemV1>>((props) => {
     const { item } = props
     return (
         <ItemV1Wrapper>
