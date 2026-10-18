@@ -2,6 +2,7 @@ import { memo } from 'react'
 import type { ReactNode } from 'react'
 import { ItemV1Wrapper } from './style'
 import type { HotRecommend } from '@/views/discover/c-views/recommend/models/recommend'
+import { formatCount, getImageUrl } from '@/utils/format'
 
 interface IProps {
     children?: ReactNode
@@ -13,12 +14,12 @@ const SectionItemV1 = memo<IProps>((props) => {
     return (
         <ItemV1Wrapper>
             <div className="top">
-                <img src={item?.picUrl} alt="" />
+                <img src={getImageUrl(item?.picUrl)} alt="" />
                 <div className="cover sprite_cover">
                     <div className="info sprite_cover">
                         <span>
                             <i className="sprite_icon headset"></i>
-                            <span className="count">{item?.playCount}</span>
+                            <span className="count">{formatCount(item?.playCount)}</span>
                         </span>
                         <i className="sprite_icon play"></i>
                     </div>
