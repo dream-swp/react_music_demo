@@ -14,21 +14,21 @@ export const feachHotRecommend = createAsyncThunk('hotRecommend', async (_, { di
     dispatch(changeHotRecommendAction(result.data.result))
 })
 
-export const feachNewAlbum = createAsyncThunk('', async (_, {dispatch}) => {
-    const result = await getNewAlbum(10) 
+export const feachNewAlbum = createAsyncThunk('', async (_, { dispatch }) => {
+    const result = await getNewAlbum(10)
     dispatch(changeNewAlbumAction(result.data.albums))
 })
 
 interface RecommendState {
     banners: Banner[]
     hotRecommend: HotRecommend[]
-    newAlbum: Album[]
+    newAlbums: Album[]
 }
 
 const initialState: RecommendState = {
     banners: [],
     hotRecommend: [],
-    newAlbum: []
+    newAlbums: []
 }
 
 const recommendSlice = createSlice({
@@ -41,12 +41,13 @@ const recommendSlice = createSlice({
         changeHotRecommendAction(state, { payload }) {
             state.hotRecommend = payload
         },
-        changeNewAlbumAction(state, { payload}) {
-            state.newAlbum = payload
+        changeNewAlbumAction(state, { payload }) {
+            state.newAlbums = payload
         }
     }
 })
 
-export const { changeBannersAction, changeHotRecommendAction, changeNewAlbumAction } = recommendSlice.actions
+export const { changeBannersAction, changeHotRecommendAction, changeNewAlbumAction } =
+    recommendSlice.actions
 
 export default recommendSlice.reducer

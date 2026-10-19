@@ -2,9 +2,10 @@ import { memo } from 'react'
 import type { ReactNode } from 'react'
 import RecommendWrapper from './style'
 
-import SectionHeaderV1 from '@/components/section-header-v1'
 import { shallowEqualApp, useAppSelector } from '@/store'
-import SectionItemV1 from '@/components/section-item-v1'
+
+import SectionHeaderV1 from '@/components/section-header-v1'
+import SongMenuItem from '@/components/section-song-menu-item'
 
 interface IProps {
     children?: ReactNode
@@ -27,7 +28,7 @@ const HotRecommend = memo<IProps>(() => {
             />
             <div className="recommend-list">
                 {hotRecommend.map((item) => {
-                    return <SectionItemV1 key={item.id} item={item} />
+                    return <SongMenuItem key={item.id} item={item} />
                 })}
             </div>
         </RecommendWrapper>

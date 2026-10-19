@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ItemV1Wrapper = styled.div`
+export const SongMenuItemWrapper = styled.div`
     width: 140px;
     margin: 15px 0;
     .top {
@@ -56,4 +56,4 @@ export const ItemV1Wrapper = styled.div`
     }
 `
 
-export default ItemV1Wrapper
+export default SongMenuItemWrapper

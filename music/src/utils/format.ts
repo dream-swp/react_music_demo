@@ -5,8 +5,7 @@ export function formatCount(count: number = 0) {
     return count + ''
 }
 
-
-export function getImageUrl(imageUrl?: string, width: number = 140, height: number = width) {
+export function getImageSize(imageUrl?: string, width: number = 140, height: number = width) {
     if (imageUrl == null || imageUrl.trim().length === 0) {
         return ''
     }

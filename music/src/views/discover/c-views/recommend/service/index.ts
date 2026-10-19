@@ -12,5 +12,5 @@ export function getHomeRecommend(limit = 30) {
 }
 
 export function getNewAlbum() {
-    return dsRequest.get<NewAlbumResult>({ url: '/album/newest'})
+    return dsRequest.get<NewAlbumResult>({ url: '/album/newest' })
 }

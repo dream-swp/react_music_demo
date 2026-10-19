@@ -2,8 +2,9 @@ import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import type { ComponentRef, ReactNode } from 'react'
 import { Carousel } from 'antd'
 
-import { BannerWrapper, BannerLeftWrapper, BannerRightWrapper, BannerControlWrapper } from './style'
 import { shallowEqualApp, useAppSelector } from '@/store'
+
+import { BannerWrapper, BannerLeftWrapper, BannerRightWrapper, BannerControlWrapper } from './style'
 import classNames from 'classnames'
 
 interface IProps {

@@ -32,9 +32,15 @@ export const AlbumWrapper = styled.div`
         }
 
         .banner {
-             flex: 1;
-                min-width: 0;
-                overflow: hidden;
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+
+            .album-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
         }
     }
 `

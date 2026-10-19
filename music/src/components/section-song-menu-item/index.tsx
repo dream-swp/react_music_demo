@@ -1,25 +1,27 @@
 import { memo } from 'react'
 import type { ReactNode } from 'react'
-import { ItemV1Wrapper } from './style'
-import { formatCount, getImageUrl } from '@/utils/format'
 
-interface ItemV1 {
+import { formatCount, getImageSize } from '@/utils/format'
+
+import { SongMenuItemWrapper } from './style'
+
+interface ItemData {
     name: string
     picUrl: string
     playCount: number
 }
 
-interface IProps<T extends ItemV1> {
+interface IProps<T extends ItemData> {
     children?: ReactNode
     item?: T
 }
 
-const SectionItemV1 = memo<IProps<ItemV1>>((props) => {
+const SongMenuItem = memo<IProps<ItemData>>((props) => {
     const { item } = props
     return (
-        <ItemV1Wrapper>
+        <SongMenuItemWrapper>
             <div className="top">
-                <img src={getImageUrl(item?.picUrl)} alt="" />
+                <img src={getImageSize(item?.picUrl)} alt="" />
                 <div className="cover sprite_cover">
                     <div className="info sprite_cover">
                         <span>
@@ -31,8 +33,8 @@ const SectionItemV1 = memo<IProps<ItemV1>>((props) => {
                 </div>
             </div>
             <div className="bottom">{item?.name}</div>
-        </ItemV1Wrapper>
+        </SongMenuItemWrapper>
     )
 })
 
-export default SectionItemV1
+export default SongMenuItem

@@ -13,6 +13,11 @@ const theme = {
         wrapv2: `   
             width: 980px;;
             margin: 0 auto; 
+        `,
+        textNowrap: `
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;  
         `
     }
 }
