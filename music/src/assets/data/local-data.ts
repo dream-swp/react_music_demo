@@ -39,7 +39,7 @@ export const discoverMenu = [
         link: '/discover/songs'
     },
     {
-        title: '主播电台',
+        title: '播客',
         link: '/discover/djradio'
     },
     {

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
-import downloadImg from '@/assets/img/download.png'
+import downloadHoverImg from '@/assets/img/download_hover.png'
+import downloadImg from '@/assets/img/download_no_hover.png'
 import controlImage from '@/assets/img/banner_sprite.png'
 
 interface BannerProps {
@@ -10,7 +11,7 @@ interface BannerProps {
 export const BannerWrapper = styled.div<BannerProps>`
     background: url(${(props) => props.$bgImage}) center center / 6000px;
     .top-banner {
-        height: 270px;
+        height: 285px;
         display: flex;
         position: relative;
     }
@@ -25,9 +26,10 @@ export const BannerLeftWrapper = styled.div`
         left: 0;
         top: 0;
         overflow: hidden;
-        height: 270px;
+        height: 285px;
         .image {
             width: 100%;
+            height: 100%;
         }
     }
 
@@ -63,9 +65,14 @@ export const BannerRightWrapper = styled.a.attrs({
     href: 'https://music.163.com/#/download',
     target: '_blank'
 })`
+    flex: 0 0 254px;
     width: 254px;
-    height: 270px;
-    background: url(${downloadImg});
+    height: 285px;
+    background: url(${downloadImg}) 0 0 / 254px 285px no-repeat;
+
+    &:hover {
+        background-image: url(${downloadHoverImg});
+    }
 `
 
 export const BannerControlWrapper = styled.div`

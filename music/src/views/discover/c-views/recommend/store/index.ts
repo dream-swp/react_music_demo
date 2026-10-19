@@ -1,8 +1,24 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+
 import { getBanners, getHomeRecommend, getNewAlbum } from '../service'
-import type { Banner } from '../models/banner' // 改为 import type
+
+import type { Banner } from '../models/banner'
 import type { HotRecommend } from '../models/recommend'
 import type { Album } from '../models/new-album'
+
+export const feachRecommendDatas = createAsyncThunk('feachRecommendDatas', (_, { dispatch }) => {
+    getBanners().then((result) => {
+        dispatch(changeBannersAction(result.data.banners))
+    })
+
+    getHomeRecommend(8).then((result) => {
+        dispatch(changeHotRecommendAction(result.data.result))
+    })
+
+    getNewAlbum().then((result) => {
+        dispatch(changeNewAlbumAction(result.data.albums))
+    })
+})
 
 export const feachBannersAction = createAsyncThunk('banners', async (_, { dispatch }) => {
     const result = await getBanners()
@@ -15,7 +31,7 @@ export const feachHotRecommend = createAsyncThunk('hotRecommend', async (_, { di
 })
 
 export const feachNewAlbum = createAsyncThunk('', async (_, { dispatch }) => {
-    const result = await getNewAlbum(10)
+    const result = await getNewAlbum()
     dispatch(changeNewAlbumAction(result.data.albums))
 })
 

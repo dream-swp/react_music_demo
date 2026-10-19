@@ -25,6 +25,11 @@
         "link": "https://music.163.com/st/musician"
     },
     {
+        "title": "云推歌",
+        "type": "link",
+        "link": "https://music.163.com/st/ad-song"
+    },
+    {
         "title": "下载客户端",
         "type": "path",
         "link": "/download"

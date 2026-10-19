@@ -2,14 +2,16 @@ import styled from 'styled-components'
 
 export const NavBarWrapper = styled.div`
     /* width: 100%; */
-    height: 30px;
+    height: 35px;
+    box-sizing: border-box;
     background-color: ${(props) => props.theme.color.primary};
-
+    border-bottom: 1px solid #a40011;
     .nav {
+        box-sizing: border-box;
         display: flex;
-        padding-left: 350px;
+        padding-left: 180px;
         position: relative;
-        top: -4px;
+        /* top: -4px; */
     }
 
     .item {
