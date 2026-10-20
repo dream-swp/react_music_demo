@@ -12,9 +12,7 @@ const TopRanking = memo<IProps>(() => {
     return (
         <TopRankingWrapper>
             <SectionHeaderV1 title="榜单" morePath="/discover/ranking" />
-            <div className="content">
-                
-            </div>
+            <div className="content"></div>
         </TopRankingWrapper>
     )
 })

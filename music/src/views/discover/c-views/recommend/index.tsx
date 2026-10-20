@@ -2,7 +2,7 @@ import { memo, useEffect } from 'react'
 import type { ReactNode } from 'react'
 
 import { useAppDispatch } from '@/store'
-import { feachRecommendDatas } from './store'
+import { feachPlaylistDetail, feachRecommendDatas } from './store'
 
 import { RecommendLeft, RecommendRight, RecommendSection, RecommendWrapper } from './style'
 
@@ -20,6 +20,7 @@ const Recommend = memo<IProps>(() => {
 
     useEffect(() => {
         dispatch(feachRecommendDatas())
+        dispatch(feachPlaylistDetail())
     }, [])
 
     return (

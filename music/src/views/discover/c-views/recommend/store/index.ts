@@ -1,10 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-import { getBanners, getHomeRecommend, getNewAlbum } from '../service'
+import { getBanners, getHomeRecommend, getNewAlbum, getPlaylistDetail } from '../service'
 
 import type { Banner } from '../models/banner'
 import type { HotRecommend } from '../models/recommend'
 import type { Album } from '../models/new-album'
+import type { Ranking } from '../models/ranking'
 
 export const feachRecommendDatas = createAsyncThunk('feachRecommendDatas', (_, { dispatch }) => {
     getBanners().then((result) => {
@@ -17,6 +18,17 @@ export const feachRecommendDatas = createAsyncThunk('feachRecommendDatas', (_, {
 
     getNewAlbum().then((result) => {
         dispatch(changeNewAlbumAction(result.data.albums))
+    })
+})
+
+export const feachPlaylistDetail = createAsyncThunk('feachPlaylistDetail', (_, { dispatch }) => {
+    // 19723756 = 飙升榜， 3779629 = 新歌榜, 2884035 = 原创榜
+    const ids = [19723756, 3779629, 2884035]
+    const promises = ids.map((item) => getPlaylistDetail(item))
+    // 保证数据顺序 19723756 -> 3779629 -> 2884035
+    Promise.all(promises).then((res) => {
+        const rankings = res.map((item) => item.data.playlist)
+        dispatch(changeRankingsAction(rankings))
     })
 })
 
@@ -39,12 +51,14 @@ interface RecommendState {
     banners: Banner[]
     hotRecommend: HotRecommend[]
     newAlbums: Album[]
+    rankings: Ranking[]
 }
 
 const initialState: RecommendState = {
     banners: [],
     hotRecommend: [],
-    newAlbums: []
+    newAlbums: [],
+    rankings: []
 }
 
 const recommendSlice = createSlice({
@@ -59,11 +73,18 @@ const recommendSlice = createSlice({
         },
         changeNewAlbumAction(state, { payload }) {
             state.newAlbums = payload
+        },
+        changeRankingsAction(state, { payload }) {
+            state.rankings = payload
         }
     }
 })
 
-export const { changeBannersAction, changeHotRecommendAction, changeNewAlbumAction } =
-    recommendSlice.actions
+export const {
+    changeBannersAction,
+    changeHotRecommendAction,
+    changeNewAlbumAction,
+    changeRankingsAction
+} = recommendSlice.actions
 
 export default recommendSlice.reducer
