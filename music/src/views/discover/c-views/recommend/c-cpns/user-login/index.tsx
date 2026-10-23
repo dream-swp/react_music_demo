@@ -20,8 +20,6 @@ const UserLogin = memo<IProps>(() => {
                     用户登录
                 </a>
             </div>
-
-            {/* <div></div> */}
         </LoginWrapper>
     )
 })

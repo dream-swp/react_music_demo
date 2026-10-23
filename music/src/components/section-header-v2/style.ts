@@ -1,0 +1,19 @@
+import styled from 'styled-components'
+
+export const HeaderV2Wrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 20px;
+    margin-top: 10px;
+    height: 23px;
+
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+
+    h3 {
+        font-size: 12px;
+    }
+`
+
+export default HeaderV2Wrapper

@@ -11,6 +11,8 @@ import HotRecommend from './c-cpns/hot-recommend'
 import NewAlbum from './c-cpns/new-album'
 import TopRanking from './c-cpns/top-ranking'
 import UserLogin from './c-cpns/user-login'
+import SettleSinger from './c-cpns/settle-singer'
+import HotAnchor from './c-cpns/hot-anchor'
 
 interface IProps {
     children?: ReactNode
@@ -35,8 +37,8 @@ const Recommend = memo<IProps>(() => {
                 </RecommendLeft>
                 <RecommendRight className="right">
                     <UserLogin />
-                    <div>入住歌手</div>
-                    <div>热门主播</div>
+                    <SettleSinger />
+                    <HotAnchor />
                 </RecommendRight>
             </RecommendSection>
         </RecommendWrapper>
