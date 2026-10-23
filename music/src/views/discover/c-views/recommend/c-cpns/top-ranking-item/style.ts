@@ -139,10 +139,6 @@ export const RankingItemWrapper = styled.div`
         justify-content: flex-end;
         a {
             color: #000;
-
-            &:hover {
-                text-decoration: underline;
-            }
         }
     }
 `

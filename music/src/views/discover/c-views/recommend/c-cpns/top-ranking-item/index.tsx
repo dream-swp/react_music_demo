@@ -46,13 +46,12 @@ const TopRankingItem = memo<IProps>((props) => {
                                     <button className="sprite_02 btn favor"></button>
                                 </div>
                             </div>
-                            
                         </div>
                     )
                 })}
             </div>
             <div className="footer">
-                <a href="">查看全部 &gt;</a>
+                <a href="#/discover/ranking">查看全部 &gt;</a>
             </div>
         </RankingItemWrapper>
     )
