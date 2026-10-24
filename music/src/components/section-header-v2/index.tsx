@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const SectionHeaderV2 = memo<IProps>((props) => {
-    const { title = '', more = '查看全部', morePath } = props
+    const { title = '', more = '查看全部 >', morePath } = props
     return (
         <HeaderV2Wrapper>
             <h3 className="title">{title}</h3>
