@@ -8,7 +8,7 @@ import recommendSlice from '@/views/discover/c-views/recommend/store'
 const store = configureStore({
     reducer: {
         discover: discoverSlice,
-        recommen: recommendSlice
+        recommend: recommendSlice
     }
 })
 

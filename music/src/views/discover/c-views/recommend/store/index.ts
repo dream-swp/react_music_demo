@@ -12,6 +12,7 @@ import type { Banner } from '../models/top-banner'
 import type { HotRecommend } from '../models/hot-recommend'
 import type { Album } from '../models/new-album'
 import type { Ranking } from '../models/top-ranking'
+import type { Artists } from '../models/settle-artists'
 
 export const feachRecommendDatas = createAsyncThunk('feachRecommendDatas', (_, { dispatch }) => {
     getBanners().then((result) => {
@@ -27,7 +28,7 @@ export const feachRecommendDatas = createAsyncThunk('feachRecommendDatas', (_, {
     })
 
     getArtistList(5).then((result) => {
-        console.log(result.data)
+        dispatch(changeSettleArtists(result.data.artists))
     })
 })
 
@@ -62,13 +63,15 @@ interface RecommendState {
     hotRecommend: HotRecommend[]
     newAlbums: Album[]
     rankings: Ranking[]
+    settleArtists: Artists[]
 }
 
 const initialState: RecommendState = {
     banners: [],
     hotRecommend: [],
     newAlbums: [],
-    rankings: []
+    rankings: [],
+    settleArtists: []
 }
 
 const recommendSlice = createSlice({
@@ -86,6 +89,9 @@ const recommendSlice = createSlice({
         },
         changeRankingsAction(state, { payload }) {
             state.rankings = payload
+        },
+        changeSettleArtists(state, { payload }) {
+            state.settleArtists = payload
         }
     }
 })
@@ -94,7 +100,8 @@ export const {
     changeBannersAction,
     changeHotRecommendAction,
     changeNewAlbumAction,
-    changeRankingsAction
+    changeRankingsAction,
+    changeSettleArtists
 } = recommendSlice.actions
 
 export default recommendSlice.reducer

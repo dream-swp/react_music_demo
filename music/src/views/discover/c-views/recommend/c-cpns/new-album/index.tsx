@@ -15,7 +15,7 @@ interface IProps {
 const NewAlbum = memo<IProps>(() => {
     const { newAlbums } = useAppSelector(
         (state) => ({
-            newAlbums: state.recommen.newAlbums
+            newAlbums: state.recommend.newAlbums
         }),
         shallowEqualApp
     )

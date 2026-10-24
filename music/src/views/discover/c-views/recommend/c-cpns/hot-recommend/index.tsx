@@ -14,7 +14,7 @@ interface IProps {
 const HotRecommend = memo<IProps>(() => {
     const { hotRecommend } = useAppSelector(
         (state) => ({
-            hotRecommend: state.recommen.hotRecommend
+            hotRecommend: state.recommend.hotRecommend
         }),
         shallowEqualApp
     )

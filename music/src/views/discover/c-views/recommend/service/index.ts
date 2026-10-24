@@ -3,6 +3,7 @@ import type { BannerResult } from '../models/top-banner'
 import type { RecommendResult } from '../models/hot-recommend'
 import type { NewAlbumResult } from '../models/new-album'
 import type { RankingResult } from '../models/top-ranking'
+import type { SettleArtistsResutl } from '../models/settle-artists'
 
 export function getBanners() {
     return dsRequest.get<BannerResult>({
@@ -31,7 +32,7 @@ export function getPlaylistDetail(id: number) {
 }
 
 export function getArtistList(limit = 30) {
-    return dsRequest.get({
+    return dsRequest.get<SettleArtistsResutl>({
         url: '/artist/list',
         params: {
             limit

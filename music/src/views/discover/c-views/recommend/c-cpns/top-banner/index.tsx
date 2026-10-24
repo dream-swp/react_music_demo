@@ -14,7 +14,7 @@ interface IProps {
 const TopBanner = memo<IProps>(() => {
     const { banners } = useAppSelector(
         (state) => ({
-            banners: state.recommen.banners
+            banners: state.recommend.banners
         }),
         shallowEqualApp
     )

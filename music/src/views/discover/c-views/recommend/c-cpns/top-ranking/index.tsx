@@ -13,7 +13,7 @@ interface IProps {
 const TopRanking = memo<IProps>(() => {
     const { rankings } = useAppSelector(
         (state) => ({
-            rankings: state.recommen.rankings
+            rankings: state.recommend.rankings
         }),
         shallowEqualApp
     )

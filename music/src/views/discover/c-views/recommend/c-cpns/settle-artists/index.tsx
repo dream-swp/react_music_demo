@@ -1,18 +1,18 @@
 import { memo } from 'react'
 import type { ReactNode } from 'react'
-import SingerWrapper from './style'
+import ArtistsWrapper from './style'
 import SectionHeaderV2 from '@/components/section-header-v2'
 
 interface IProps {
     children?: ReactNode
 }
 
-const SettleSinger = memo<IProps>(() => {
+const SettleArtists = memo<IProps>(() => {
     return (
-        <SingerWrapper>
+        <ArtistsWrapper>
             <SectionHeaderV2 title="入驻歌手" more="查看全部" morePath="#" />
-        </SingerWrapper>
+        </ArtistsWrapper>
     )
 })
 
-export default SettleSinger
+export default SettleArtists
