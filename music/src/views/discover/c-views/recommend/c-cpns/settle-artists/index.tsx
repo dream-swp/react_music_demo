@@ -26,6 +26,13 @@ const SettleArtists = memo<IProps>(() => {
             {settleArtists.map((item) => {
                 return <SettleArtistItem item={item} to="#/discover/artist" key={item.id} />
             })}
+
+            <div className="apply-for">
+                <a href="#">
+                    <i className="sprite_button left">申请成为网易音乐人</i>
+                    <span className="sprite_button right" aria-hidden="true" />
+                </a>
+            </div>
         </ArtistsWrapper>
     )
 })
