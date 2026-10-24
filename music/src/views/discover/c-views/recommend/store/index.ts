@@ -12,7 +12,7 @@ import type { Banner } from '../models/top-banner'
 import type { HotRecommend } from '../models/hot-recommend'
 import type { Album } from '../models/new-album'
 import type { Ranking } from '../models/top-ranking'
-import type { Artists } from '../models/settle-artists'
+import type { SettleArtist } from '../models/settle-artists'
 
 export const feachRecommendDatas = createAsyncThunk('feachRecommendDatas', (_, { dispatch }) => {
     getBanners().then((result) => {
@@ -63,7 +63,7 @@ interface RecommendState {
     hotRecommend: HotRecommend[]
     newAlbums: Album[]
     rankings: Ranking[]
-    settleArtists: Artists[]
+    settleArtists: SettleArtist[]
 }
 
 const initialState: RecommendState = {

@@ -1,3 +1,5 @@
+import type { Artist } from '@/models/artist'
+
 export interface NewAlbumResult {
     code: number
     albums: Album[]
@@ -30,19 +32,4 @@ export interface Album {
     picId_str: string
 }
 
-export interface AlbumArtist {
-    name: string
-    id: number
-    picId: string
-    img1v1Id: string
-    briefDesc: string
-    picUrl: string
-    img1v1Url: string
-    albumSize: number
-    alias: string[]
-    trans: string
-    musicSize: number
-    topicPerson: number
-    img1v1Id_str: string
-    picId_str?: string
-}
+export interface AlbumArtist extends Artist {}
