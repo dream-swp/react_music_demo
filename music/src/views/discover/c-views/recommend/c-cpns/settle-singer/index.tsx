@@ -10,7 +10,7 @@ interface IProps {
 const SettleSinger = memo<IProps>(() => {
     return (
         <SingerWrapper>
-            <SectionHeaderV2 title="入驻歌手" morePath="#" />
+            <SectionHeaderV2 title="入驻歌手" more="查看全部" morePath="#" />
         </SingerWrapper>
     )
 })

@@ -1,8 +1,8 @@
 import dsRequest from '@/service'
-import type { BannerResult } from '../models/banner'
-import type { RecommendResult } from '../models/recommend'
+import type { BannerResult } from '../models/top-banner'
+import type { RecommendResult } from '../models/hot-recommend'
 import type { NewAlbumResult } from '../models/new-album'
-import type { RankingResult } from '../models/ranking'
+import type { RankingResult } from '../models/top-ranking'
 
 export function getBanners() {
     return dsRequest.get<BannerResult>({
@@ -27,5 +27,14 @@ export function getPlaylistDetail(id: number) {
     return dsRequest.get<RankingResult>({
         url: '/playlist/detail',
         params: { id }
+    })
+}
+
+export function getArtistList(limit = 30) {
+    return dsRequest.get({
+        url: '/artist/list',
+        params: {
+            limit
+        }
     })
 }

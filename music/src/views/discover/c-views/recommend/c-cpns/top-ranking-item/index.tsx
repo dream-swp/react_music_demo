@@ -4,7 +4,7 @@ import type { ReactNode } from 'react'
 import { getImageSize } from '@/utils/format'
 
 import RankingItemWrapper from './style'
-import type { Ranking } from '../../models/ranking'
+import type { Ranking } from '../../models/top-ranking'
 
 interface IProps {
     children?: ReactNode

@@ -10,7 +10,7 @@ interface IProps {
 const HotAnchor = memo<IProps>(() => {
     return (
         <AnchorWrapper>
-            <SectionHeaderV2 title="热门主播" more="" morePath="#" />
+            <SectionHeaderV2 title="热门主播" more="" />
         </AnchorWrapper>
     )
 })

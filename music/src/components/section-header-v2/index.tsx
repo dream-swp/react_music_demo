@@ -14,9 +14,7 @@ const SectionHeaderV2 = memo<IProps>((props) => {
     return (
         <HeaderV2Wrapper>
             <h3 className="title">{title}</h3>
-            <a className="more" href={morePath}>
-                {more && more + ' >'}
-            </a>
+            {more && morePath && <a className="more" href={morePath}></a>}
         </HeaderV2Wrapper>
     )
 })

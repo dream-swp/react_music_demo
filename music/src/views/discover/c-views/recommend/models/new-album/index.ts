@@ -18,19 +18,19 @@ export interface Album {
     tags: string
     company: string
     briefDesc: string
-    artist: Artist
+    artist: AlbumArtist
     songs: any
     alias: any[]
     status: number
     copyrightId: number
     commentThreadId: string
-    artists: Artist[]
+    artists: AlbumArtist[]
     paid: boolean
     onSale: boolean
     picId_str: string
 }
 
-export interface Artist {
+export interface AlbumArtist {
     name: string
     id: number
     picId: string
