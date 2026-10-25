@@ -9,5 +9,5 @@ export function getImageSize(imageUrl?: string, width: number = 140, height: num
     if (imageUrl == null || imageUrl.trim().length === 0) {
         return ''
     }
-    return imageUrl + `?param=${width}x${height}`
+    return imageUrl + `?param=${width}y${height}`
 }

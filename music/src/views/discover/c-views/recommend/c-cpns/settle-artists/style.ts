@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const ArtistsWrapper = styled.div`
-
     .apply-for {
         margin-top: 12px;
         padding: 0 20px;
